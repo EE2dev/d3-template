@@ -30,7 +30,7 @@ Implement the following sections (also marked in .js file) as needed
   2. all updatable functions to be called by getter-setter methods
 2. API for external access
   1. add getter-setter  methods here
-3. add private functions here
+3. private functions
 4. visualization specific processing
   1. insert code here
   2. update functions
