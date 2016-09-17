@@ -24,6 +24,7 @@ var myChart = reUsableChart("example.csv"); // no parameter when data is embedde
 * Open the file *"d3_template_reusable.js"*
 
 Implement the following sections (also marked in .js file) as needed
+
 1. visualization specific variables
   1. all options that should be accessible to caller
   2. all updatable functions to be called by getter-setter methods
