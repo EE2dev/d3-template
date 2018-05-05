@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="utf-8"> <!-- also save this file as unicode-8 ! -->
+<head>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></scrip-->
+  <script src="build/helloWorld.js"></script>
+  <style>            
+    h1 {
+        color: steelblue;
+        font-family: 'Indie Flower', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    var myChart = hw.chart("hello world!");
+    
+    d3.select("body")
+      .append("div")
+      .attr("class", "chart")
+      .call(myChart);
+  </script>
+</body>
+</html> 

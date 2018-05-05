@@ -1,0 +1,211 @@
+  .unselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  pre#data, pre#dataNodes, pre#paths {
+    display:none;
+  }
+
+  div.chart {
+    margin: 0 auto;   
+    display: table;
+  }
+  
+  canvas {
+    position: absolute;
+  }
+
+  div.sankeyMenu {
+    font-family: sans-serif; 
+    font-size: 75%;
+    display: table-cell;
+    min-width: 100px; 
+    padding-top: 18px;
+    vertical-align: top;
+  }
+  
+  div.NodeInfoMenu, div.PathsMenu, div.OptionsMenu {
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.1);
+    border-radius: 3px;
+    padding-right: 4px;
+    padding-top: 2px;
+  }
+  
+  div.NodeInfoMenu, div.PathsMenu {
+    margin-top: 5px;
+  }
+  
+  .titleMenu {
+    padding: 0px;
+    font-size: 120%; 
+    font-weight: bold;
+    text-align: center;
+  }
+   
+  div.sankeyChart {
+    display: table-cell;
+  }
+
+  g.tick path {
+    stroke: grey;
+    stroke-width: 3px;
+  }
+  
+  .sankeyNode {
+    fill: #023858; 
+    fill-opacity: .75;  
+    shape-rendering: crispEdges;
+    stroke: #000;
+    stroke-width: 0px;
+    stroke-opacity: .5;
+  } 
+    
+  rect.sankeyNodeInfo {
+    shape-rendering: crispEdges;
+    stroke: #000;
+    stroke-width: 0px;
+    stroke-opacity: .5;
+    fill: orange;
+  }
+
+  .node text {
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .link {
+    fill: none;
+    stroke: #023858;
+    stroke: #000;  
+    stroke-opacity: .2;
+    /* change stroke-opacity for subtle background + highlighting individual path 
+    stroke-opacity: .06; 
+    */
+  }
+
+  .link:hover {
+    stroke-opacity: .5;
+  }
+  
+  div.tooltipSankeySeq {
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    color: white;
+    padding: 8px;
+    background-color: rgba(0,0,0,0.75);
+    border-radius: 6px;
+    font: 12px sans-serif;
+  }
+  
+  /* title top and left for multiples */
+  text.multiples {
+    text-anchor: middle;
+    font-size: 12px;
+  }
+  
+  /* title top for single */
+  text.single {
+    text-anchor: middle;
+    font-size: 18px;
+  }
+
+  /* hide DOM elements after zoom transition */
+  .hide {
+    display: none;
+  }
+
+  /* show element after returning from zoom transition */
+  .show {
+    display: inline;
+  }
+
+  /* text labels for transitionY */
+  text.percentageLabel {
+    opacity: 0;
+  }
+  
+  /* colors for the nodes */
+  
+  /* qualitative color scheme */
+  /*
+  .color0{ fill: #393b79;}
+  .color1{ fill: #637939;}
+  .color2{ fill: #843c39;}
+  .color3{ fill: #8c6d31;}
+  .color4{ fill: #7b4173;}
+  */
+
+  /*
+  .color0{ fill: #9c9ede;}
+  .color1{ fill: #6b6ecf;}
+  .color2{ fill: #5254a3;}
+  .color3{ fill: #393b79;}
+  */
+  
+
+  /* different shades of blue from light to dark */
+  /*
+  .color0{ fill: #74a9cf;}
+  .color1{ fill: #3690c0;}
+  .color2{ fill: #0570b0;}
+  .color3{ fill: #045a8d;} 
+  .color4{ fill: #023858;}
+  */
+  
+  /*
+  .color0{ fill: #9ecae1;}
+  .color1{ fill: #6baed6;}
+  .color2{ fill: #4292c6;}
+  .color3{ fill: #2171b5;}
+  .color4{ fill: #084594;} 
+  */
+  
+  .color0{ fill: #023858; fill-opacity: .25;}
+  .color1{ fill: #023858; fill-opacity: .45;}
+  .color2{ fill: #023858; fill-opacity: .65;}
+  .color3{ fill: #023858; fill-opacity: .85;}
+  .color4{ fill: #023858; fill-opacity: .95;}  
+  
+  /* examples for hightlighting individual nodes and links
+   *
+   * selector for nodes: `"rect.nx"` + `<sourceX>` + `".ny"` + `<sourceY>` 
+   * selector for links: `"path.lsx"` + `<sourceX>` + `".lsy"` + `<sourceY>` + `".ltx"` + `<targetX>` + `".lty"` + `<targetY>`
+   *
+   * E.g. to highlight individual path for a presentation:
+   *  (1) update stroke-opacity in .link from 0.2 to 0.06
+   *  (2) style individual path with stroke-opacity: .3
+   */   
+
+   /*
+  rect.ny2.nx2001 {
+    fill: red;
+  }
+  
+  path.lsx2000.lsy1.ltx2001.lty1, path.lsx2001.lsy1.ltx2002.lty1, path.lsx2002.lsy1.ltx2003.lty1 { 
+    stroke: red;
+    stroke-opacity: .3;
+  }
+  
+  rect.nymisc.nx5{
+     fill: orange;
+  }
+   
+  path.lsyproduct.ltyproduct {
+    stroke: orange;
+    stroke-opacity: .5;
+  }
+  
+  rect.nyproduct{
+     fill: orange;
+  }  
+  */
+  

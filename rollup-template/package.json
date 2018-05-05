@@ -1,0 +1,40 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "My first rollup program",
+  "keywords": [
+    "d3",
+    "hello",
+    "world"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/helloWorld.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/ee2dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ee2dev/sequence-explorer.git"
+  },
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -c",
+    "test": "node test/helloWorld-test.js | tap-spec && eslint index.js src",
+    "prepare": "npm run test && uglifyjs build/helloWorld.js -c -m -o build/helloWorld.min.js"
+  },
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "d3": "^4.9.1",
+    "eslint": "^3.19.0",
+    "rollup": "0.27",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "4",
+    "uglify-js": "^2.7.0",
+    "webfontloader": "^1.6.28"
+  },
+  "dependencies": {
+    "d3": "^4.9.1"
+  }
+}
