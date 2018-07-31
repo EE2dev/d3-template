@@ -11,6 +11,14 @@ To handle multiple transitions on the same element, see [this workaround](https:
 * [timeSeries](http://bl.ocks.org/ee2dev/fca9603546f74b4f2c9ee0e7d811659d)
 * [itemExplorer](https://github.com/EE2dev/item-explorer)
 
+## Version 5
+
+This version contains code for version 5 of d3.js and:
+* ES6 modules which are bundled together with rollup
+* eslint
+* uglify to minimize code
+* changed to element `aside` for data
+
 ## How to use the template
 
 If you use d3 v4, copy the files from the folder *"version with d3 v4"*.
@@ -36,7 +44,6 @@ Implement the following sections (also marked in .js file) as needed
   2. update functions
 5. data processing
   1. adjust for visualization specific data processing
-
 
 ## To do
 * Extend readData() in d3_template_reusable.js from just csv to json,...
