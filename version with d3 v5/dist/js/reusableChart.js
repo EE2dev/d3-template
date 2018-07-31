@@ -40,11 +40,7 @@
           createChart(selection, d);
         } else {
           // data processing here
-          if (typeof _myData !== "undefined") {
-            readData(_myData, selection);
-          } else {
-            readData("<aside>", selection);
-          }
+          readData(_myData, selection);
         }
       });
     }
@@ -113,12 +109,20 @@
     // 5.1 adjust for visualization specific data processing
     // XHR to load data   
     function readData(csvFile, selection) {
-      if (csvFile !== "<aside>") {
-        d3.csv(csvFile, convertToNumber, function (error, f) {
-          createChart(selection, f);
+      if (typeof csvFile !== "undefined") {
+        /*
+        if (csvFile !== "<aside>") {
+          d3.csv(csvFile, convertToNumber, function(error, f) {
+            createChart(selection, f);
+          });
+          */
+        d3.dsv(",", csvFile, convertToNumber).then(function (data) {
+          console.log(data);
+          createChart(selection, data);
         });
       } else {
-        file = d3.csvParse(d3.select("aside#data").text());
+        var inputData = d3.select("aside#data").text();
+        file = d3.csvParse(removeWhiteSpaces(inputData));
         file.forEach(function (row) {
           convertToNumber(row);
         });
@@ -127,6 +131,12 @@
         }
         createChart(selection, file);
       }
+    }
+
+    // helper to delete extra white spaces 
+    // from -> https://stackoverflow.com/questions/18065807/regular-expression-for-removing-whitespaces
+    function removeWhiteSpaces(str) {
+      return str.replace(/^\s+|\s+$|\s+(?=\s)/g, "");
     }
 
     // helper for XHR
